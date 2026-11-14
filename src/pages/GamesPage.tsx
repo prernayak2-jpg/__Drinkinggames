@@ -31,8 +31,14 @@ export function GamesPage() {
       </h1>
       <p className="rounded-2xl bg-black/60 p-4 text-center text-lg backdrop-blur-sm">
         {companyLabels[company]} · {players} players
-        <span className="mt-1 block text-sm text-violet-200">Game picks coming soon</span>
+        <span className="mt-1 block text-sm text-violet-200">More game picks coming soon</span>
       </p>
+      <ChoiceButton variant="primary" onClick={() => navigate('/games/party')}>
+        What are you bringing to the party?
+      </ChoiceButton>
+      <ChoiceButton variant="primary" onClick={() => navigate('/games/7-11')}>
+        7-11 Rule Shuffle
+      </ChoiceButton>
       <ChoiceButton onClick={startOver}>Start over</ChoiceButton>
     </SceneLayout>
   )
