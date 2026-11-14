@@ -47,3 +47,24 @@ export const sevenElevenGameRules: GameRules = {
     'Example new rule: "Instead of saying 4, you clap twice."',
   ],
 }
+
+export const spellBGameRules: GameRules = {
+  title: 'Spell B',
+  tagline: 'A drunken spelling bee: listen to the word, type it out, and do a drinking dare if you get it wrong.',
+  players: '2 or more (no host needed, the site reads the words)',
+  howToPlay: [
+    "Enter everyone's names and pick a level: Easy, Medium or Hard.",
+    'Pass the phone to the first player. The site reads their word out loud.',
+    'The player types the spelling and taps Check.',
+    'The site says if it’s right or wrong.',
+    "If it's right, pass the phone to the next player for a new word.",
+    "If it's wrong, the site gives the player a drinking dare to do, then the phone moves on.",
+    'Everyone gets 3 words a round. If most words were spelled right, you can move up a level.',
+  ],
+  rules: [
+    'You can replay the word as many times as you like, but no peeking at anyone’s phone for the spelling.',
+    'Once you tap Check, your answer is final.',
+    'Wrong spelling means you do the dare on screen, no arguing.',
+    'Non-drinkers can swap any sip for a sip of water.',
+  ],
+}

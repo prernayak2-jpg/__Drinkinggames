@@ -91,7 +91,7 @@
 
 ### How It Works in the App
 
-*Not built yet. This is the plan to follow when we add Spell B to the app.*
+*Built. Play it from the games page (Spell B). Players enter their names first, then pick a level.*
 
 **1. Pick a level** → The player chooses Easy, Medium or Hard.
 
@@ -109,14 +109,15 @@
 
 **5. End of round** → If most of the answers in the round were right, the site asks whether the players want to move up a level, with **Yes** and **No** buttons. Yes switches to the next harder level, and No keeps the same level.
 
-**To decide when we build it** →
+**Decisions made when we built it** →
 
-- How many words make a round (for example 10 words, or one per player).
-- What happens on Hard, where there's no harder level (skip the move-up question, or offer to play Hard again).
-- The voice: the phone's built-in text-to-speech is free and works offline, but sounds robotic. Recorded audio sounds better but takes more work.
-- Whether capital letters, spaces and apostrophes count (for example "Wednesday" vs "wednesday", or "hors d'oeuvres").
-- Every word in the Word Bank will need a meaning and an example sentence added.
-- Whether to show a running score for each player.
+- A round is 3 words per player.
+- On Hard, there is no move-up question; the site offers **Play Hard again**.
+- The voice is the phone's built-in text-to-speech (free, works offline).
+- Capital letters and extra spaces don't count, and curly and straight apostrophes count as the same.
+- Every word in the Word Bank has a meaning and an example sentence.
+- The end of each round shows each player's score (words right out of words played).
+- Autocorrect is switched off in the spelling box, so the phone can't fix the spelling for you.
 
 **Drinking Dares** → When a player spells a word wrong, the site picks one of these at random.
 
@@ -148,7 +149,7 @@
 26. Take a sip and let someone draw a smiley face on your hand.
 27. Take a sip and act out the word without speaking.
 28. Take a sip and say the word in three different accents.
-29. Take a sip and let the group pick your next word's level.
+29. Take a sip and spell your favourite drink out loud.
 30. Take a sip and try the word again. If you get it right this time, pick someone else to drink.
 
 **Word Bank** → The site reads a word out loud, and the player types it out.

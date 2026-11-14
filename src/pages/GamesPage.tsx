@@ -36,6 +36,9 @@ export function GamesPage() {
       <ChoiceButton variant="primary" onClick={() => navigate('/games/party')}>
         What are you bringing to the party?
       </ChoiceButton>
+      <ChoiceButton variant="primary" onClick={() => navigate('/games/spell-b')}>
+        Spell B
+      </ChoiceButton>
       <ChoiceButton variant="primary" onClick={() => navigate('/games/7-11')}>
         7-11 Rule Shuffle
       </ChoiceButton>

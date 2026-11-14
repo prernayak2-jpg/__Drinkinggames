@@ -1,7 +1,9 @@
-import { useState, type FormEvent, type ReactNode } from 'react'
+import { useState, type ReactNode } from 'react'
 import { Link, Navigate } from 'react-router'
 import { ChoiceButton } from '../components/ChoiceButton'
 import { GameRulesScreen } from '../components/GameRulesScreen'
+import { PlayerNamesScreen } from '../components/PlayerNamesScreen'
+import { Popup } from '../components/Popup'
 import { SceneLayout } from '../components/SceneLayout'
 import { partyGameRules } from '../data/gameRules'
 import { levelOrder, levels, partyRules, type Level, type PartyRule } from '../data/partyRules'
@@ -9,7 +11,6 @@ import { TableScene } from '../scenes/TableScene'
 import { useSession } from '../state/session'
 
 const MIN_PLAYERS = 4
-const MAX_PLAYERS = 20
 const TURNS_PER_PLAYER = 3
 
 type Phase = 'rules' | 'setup' | 'level' | 'host' | 'play' | 'end'
@@ -133,64 +134,18 @@ export function PartyPage() {
   }
 
   if (phase === 'setup') {
-    const trimmed = names.map((n) => n.trim())
-    const ready = trimmed.every(Boolean)
-
-    function submit(e: FormEvent) {
-      e.preventDefault()
-      if (!ready) return
-      setNames(trimmed)
-      setPhase('level')
-    }
-
     return (
-      <SceneLayout scene={<TableScene />}>
-        <Title>Who's at the party?</Title>
-        <form onSubmit={submit} className="flex min-h-0 flex-col gap-4">
-          <div className="min-h-0 overflow-y-auto rounded-3xl bg-black/70 p-4 backdrop-blur-sm">
-            <p className="mb-3 text-center text-sm text-violet-200">
-              Go around the table in seating order. Some rules depend on who sits next to whom. The first
-              name is the first host.
-            </p>
-            <ol className="flex flex-col gap-2">
-              {names.map((name, i) => (
-                <li key={i} className="flex items-center gap-2">
-                  <span className="w-6 text-right text-violet-200">{i + 1}.</span>
-                  <input
-                    value={name}
-                    onChange={(e) => setNames((n) => n.map((old, j) => (j === i ? e.target.value : old)))}
-                    placeholder={i === 0 ? 'Host' : `Player ${i + 1}`}
-                    aria-label={`Player ${i + 1} name`}
-                    maxLength={20}
-                    className="min-h-11 flex-1 rounded-xl border border-white/25 bg-black/50 px-3 text-lg text-white placeholder:text-zinc-500 focus:border-neon-teal focus:outline-none"
-                  />
-                  <button
-                    type="button"
-                    aria-label={`Remove player ${i + 1}`}
-                    disabled={names.length <= MIN_PLAYERS}
-                    onClick={() => setNames((n) => n.filter((_, j) => j !== i))}
-                    className="min-h-11 w-11 rounded-xl border border-white/25 text-xl text-violet-200 disabled:opacity-30"
-                  >
-                    ×
-                  </button>
-                </li>
-              ))}
-            </ol>
-            <button
-              type="button"
-              disabled={names.length >= MAX_PLAYERS}
-              onClick={() => setNames((n) => [...n, ''])}
-              className="mt-3 w-full rounded-xl border border-dashed border-neon-teal/60 py-2 text-neon-teal disabled:opacity-30"
-            >
-              + Add a player
-            </button>
-          </div>
-          <ChoiceButton type="submit" variant="primary" disabled={!ready}>
-            {ready ? 'Next' : 'Fill in every name'}
-          </ChoiceButton>
-        </form>
-        <BackLink />
-      </SceneLayout>
+      <PlayerNamesScreen
+        title="Who's at the party?"
+        intro="Go around the table in seating order. Some rules depend on who sits next to whom. The first name is the first host."
+        initialNames={names}
+        minPlayers={MIN_PLAYERS}
+        firstPlaceholder="Host"
+        onDone={(entered) => {
+          setNames(entered)
+          setPhase('level')
+        }}
+      />
     )
   }
 
@@ -493,19 +448,6 @@ function ClueList({
           ))}
         </ul>
       )}
-    </div>
-  )
-}
-
-function Popup({ children, onOk }: { children: ReactNode; onOk: () => void }) {
-  return (
-    <div className="fixed inset-0 z-10 flex items-center justify-center bg-black/80 p-4" role="dialog" aria-modal="true">
-      <div className="animate-rule-pop w-full max-w-sm rounded-3xl border-2 border-neon-pink bg-ink p-6 text-center shadow-[0_0_30px_rgba(255,61,127,0.6)]">
-        {children}
-        <ChoiceButton variant="primary" className="mt-6 w-full" autoFocus onClick={onOk}>
-          OK
-        </ChoiceButton>
-      </div>
     </div>
   )
 }
