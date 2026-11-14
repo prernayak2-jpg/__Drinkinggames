@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, Navigate } from 'react-router'
 import { ChoiceButton } from '../components/ChoiceButton'
+import { GameRulesScreen } from '../components/GameRulesScreen'
 import { SceneLayout } from '../components/SceneLayout'
+import { sevenElevenGameRules } from '../data/gameRules'
 import { ruleCategories, sevenElevenRules, type RuleCategory } from '../data/sevenEleven'
 import { TableScene } from '../scenes/TableScene'
 import { useSession } from '../state/session'
@@ -17,6 +19,7 @@ function randomItem<T>(items: T[]) {
 /** 7-11 helper: draw a random new rule, like a lucky draw. */
 export function SevenElevenPage() {
   const { ageConfirmed } = useSession()
+  const [started, setStarted] = useState(false)
   const [categories, setCategories] = useState<RuleCategory[]>(allCategories)
   // Indexes into sevenElevenRules already drawn, so rules don't repeat until the pool runs out
   const [drawn, setDrawn] = useState<number[]>([])
@@ -27,6 +30,7 @@ export function SevenElevenPage() {
   useEffect(() => () => window.clearInterval(timer.current), [])
 
   if (!ageConfirmed) return <Navigate to="/" replace />
+  if (!started) return <GameRulesScreen game={sevenElevenGameRules} onStart={() => setStarted(true)} />
 
   const pool = sevenElevenRules.flatMap((rule, i) => (categories.includes(rule.category) ? [i] : []))
   const fresh = pool.filter((i) => !drawn.includes(i))

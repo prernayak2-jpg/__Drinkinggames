@@ -1,7 +1,9 @@
 import { useState, type FormEvent, type ReactNode } from 'react'
 import { Link, Navigate } from 'react-router'
 import { ChoiceButton } from '../components/ChoiceButton'
+import { GameRulesScreen } from '../components/GameRulesScreen'
 import { SceneLayout } from '../components/SceneLayout'
+import { partyGameRules } from '../data/gameRules'
 import { levelOrder, levels, partyRules, type Level, type PartyRule } from '../data/partyRules'
 import { TableScene } from '../scenes/TableScene'
 import { useSession } from '../state/session'
@@ -10,7 +12,7 @@ const MIN_PLAYERS = 4
 const MAX_PLAYERS = 20
 const TURNS_PER_PLAYER = 3
 
-type Phase = 'setup' | 'level' | 'host' | 'play' | 'end'
+type Phase = 'rules' | 'setup' | 'level' | 'host' | 'play' | 'end'
 
 type Turn = { seat: number; item: string; allowed: boolean }
 
@@ -23,7 +25,7 @@ function randomItem<T>(items: T[]) {
 /** "What are you bringing to the party?": the host judges items against a secret rule. */
 export function PartyPage() {
   const { ageConfirmed, players } = useSession()
-  const [phase, setPhase] = useState<Phase>('setup')
+  const [phase, setPhase] = useState<Phase>('rules')
   const [names, setNames] = useState<string[]>(() =>
     Array.from({ length: Math.max(players ?? MIN_PLAYERS, MIN_PLAYERS) }, () => ''),
   )
@@ -125,6 +127,10 @@ export function PartyPage() {
       )}
     </Popup>
   )
+
+  if (phase === 'rules') {
+    return <GameRulesScreen game={partyGameRules} onStart={() => setPhase('setup')} />
+  }
 
   if (phase === 'setup') {
     const trimmed = names.map((n) => n.trim())
