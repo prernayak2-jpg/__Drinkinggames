@@ -88,3 +88,22 @@ export const hesATenGameRules: GameRules = {
     'Example: the number is 2 → "He\'s a 10 but he chews with his mouth open and calls his mum during dates."',
   ],
 }
+
+export const ickOrNotGameRules: GameRules = {
+  title: 'Ick or Not',
+  tagline: 'A trait shows up on screen, everyone votes "ick" or "not" at the same time, and everyone who votes ick drinks.',
+  players: '3 or more',
+  howToPlay: [
+    'A trait shows up on screen. Someone reads it out loud.',
+    'When everyone has made up their mind, tap Ready to vote.',
+    'Count down with the screen: 3, 2, 1, GO!',
+    'At GO, everyone votes at the same time: thumbs up for "not", thumbs down for "ick".',
+    'Everyone who voted ick drinks.',
+    'Tap Next trait for the next one.',
+  ],
+  rules: [
+    'Everyone votes at the same time. No changing your vote.',
+    'Defending your vote is encouraged.',
+    'Example: "Says \'literally\' in every sentence."',
+  ],
+}

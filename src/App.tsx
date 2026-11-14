@@ -3,6 +3,7 @@ import { CompanyPage } from './pages/CompanyPage'
 import { EntrancePage } from './pages/EntrancePage'
 import { GamesPage } from './pages/GamesPage'
 import { HesATenPage } from './pages/HesATenPage'
+import { IckOrNotPage } from './pages/IckOrNotPage'
 import { PartyPage } from './pages/PartyPage'
 import { PlayersPage } from './pages/PlayersPage'
 import { SevenElevenPage } from './pages/SevenElevenPage'
@@ -18,6 +19,7 @@ function App() {
       <Route path="/games/party" element={<PartyPage />} />
       <Route path="/games/spell-b" element={<SpellBPage />} />
       <Route path="/games/hes-a-10" element={<HesATenPage />} />
+      <Route path="/games/ick-or-not" element={<IckOrNotPage />} />
       <Route path="/games/7-11" element={<SevenElevenPage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

@@ -544,6 +544,31 @@
 - Defending your vote is encouraged.
 - Example: "Says 'literally' in every sentence."
 
+### How It Works in the Website
+
+*Built. Play it from the games page (Ick or Not).*
+
+**1. Rules first** → The game opens on the rules screen (description, players needed, How to Play and Rules), with a **Let's play** button.
+
+**2. Trait on screen** → The site shows one trait from the Question Bank in big text, with its category (for example "Dating 💔"). Someone reads it out loud.
+
+**3. Ready to vote** → When everyone has made up their mind, someone taps **Ready to vote**.
+
+**4. Countdown** → A countdown runs on screen: 3, 2, 1, **GO!**
+
+**5. Vote** → At GO, everyone votes at the same time with their hand: 👍 for "Not" or 👎 for "Ick".
+
+**6. Drink** → The site says: "Everyone who voted 👎 Ick, drink! 🍺", with a **Next trait** button.
+
+**7. Next trait** → Tapping **Next trait** shows a new trait, and the game goes back to step 2. Traits don't repeat until the whole bank has been used.
+
+**To decide when we build it** →
+
+- Whether the group can choose categories before starting (Dating, Habits & Manners, Online & Phone, Style & Hygiene), like the 7-11 category filters.
+- Whether a game ends after a set number of traits (for example 20) or keeps going until the group stops.
+- Whether a unanimous vote gets a twist (for example, if everyone votes Ick, the person who read it out drinks too).
+- Whether the site keeps a tally of Ick votes, so it can show the "biggest ick of the night" at the end.
+
 **Question Bank** → Each one finishes "Ick or not: someone who…"
 
 **Dating 💔** (25)
@@ -887,358 +912,11 @@
 
 **5. Next** → A **Next** button moves on to the next question.
 
-**To decide when we build it** →
+**Decisions made when we built it** →
 
-- Whether players pick a category first (Sweet, Funny, Spicy, Savage, or a mix of all).
-- How the result pop-up closes: an **OK** button, or tapping anywhere.
-- Whether the phone is passed to the next person after each question.
-- Avoiding repeats, so the same question doesn't come up twice in one game.
-
-**Question Bank** → Each one finishes "Name somebody at this table who…"
-
-**Sweet 💖** (50)
-
-1. you would call if you're in trouble
-2. would be the best bridesmaid
-3. you'd trust with your ATM PIN
-4. you think is really pretty
-5. is the best dressed
-6. is most likely to become famous
-7. gives the best hugs
-8. you'd want on your team in a zombie apocalypse
-9. would make the best parent
-10. always has your back
-11. gives the best advice
-12. you'd take on a road trip
-13. has the best laugh
-14. you'd trust to plan your wedding
-15. you'd want as your travel buddy
-16. is secretly the softest person here
-17. would be the best boss
-18. you'd want to be stuck in a lift with
-19. has the best taste in music
-20. makes everyone feel welcome
-21. you'd swap lives with for a day
-22. would be the best wingman
-23. you'd call to celebrate good news
-24. would remember your birthday without Facebook
-25. would be the best cook
-26. you'd want to grow old next door to
-27. would donate a kidney to you
-28. is the most loyal friend
-29. would make the best teacher
-30. would be the first to notice if you were sad
-31. you'd want to raise your kids with
-32. would make the best godparent
-33. lights up the room when they walk in
-34. would drive across the city at 3am for you
-35. gives the best compliments
-36. you'd trust to pick your outfit
-37. would make a great doctor
-38. is the best person to cry to
-39. you'd want next to you during a scary movie
-40. always shares their food
-41. has the kindest heart
-42. remembers everyone's coffee order
-43. you'd want to share a tent with on a camping trip
-44. would give the best wedding speech
-45. you'd want as your emergency contact
-46. is the best listener
-47. would plan the best surprise party
-48. makes the best playlists
-49. would be the most fun to get lost with
-50. has changed the most since you met them (in a good way)
-
-**Funny 😂** (50)
-
-1. would be the worst roommate
-2. is the worst dancer
-3. you would like to haunt as a ghost
-4. is going to get drunk first
-5. would be a strict parent
-6. takes the longest to get ready
-7. would be the first to die in a horror movie
-8. is always late
-9. would win a reality show
-10. would sell a friend for a free pizza
-11. talks in their sleep
-12. would get arrested for something really dumb
-13. would join a cult by accident
-14. still sleeps with a stuffed toy
-15. sends the longest voice notes
-16. has the worst taste in movies
-17. would fall for a scam call
-18. is the drama queen of the group
-19. would forget their own birthday
-20. eats the most at a buffet
-21. has the most embarrassing search history
-22. would cry first in an argument
-23. sings the loudest in the shower
-24. has the weirdest food combo
-25. would become a crazy cat person
-26. would accidentally like an old photo while stalking someone
-27. would get kicked out of a museum
-28. you'd call to help hide a body
-29. argues with Google Maps
-30. takes 100 selfies to post one
-31. would get lost in their own neighbourhood
-32. would cry at a dog food commercial
-33. wouldn't survive a day without their phone
-34. would survive the longest on a desert island
-35. would trip on a perfectly flat floor
-36. would accidentally reply-all at work
-37. has the most chaotic camera roll
-38. would get stuck in a revolving door
-39. would get scammed on holiday
-40. has failed their driving test the most times
-41. would wave back at someone who wasn't waving at them
-42. lives by the five-second rule
-43. would laugh at the worst possible moment
-44. is most likely to become a meme
-45. puts ketchup on everything
-46. will lose their phone tonight
-47. would start a podcast nobody listens to
-48. would lose a fight to a monkey
-49. would show up to the wrong wedding
-50. has the most unread notifications
-
-**Spicy 🌶️** (50)
-
-1. would be a red flag
-2. would cheat in a relationship
-3. is most likely to black out tonight
-4. is most likely to go skinny dipping
-5. is most likely to text their ex tonight
-6. has the most secrets
-7. would date someone just for their money
-8. has the wildest dating history
-9. is the biggest flirt
-10. would kiss a stranger tonight
-11. has stalked their crush's ex
-12. will get married first
-13. would hook up with someone at a wedding
-14. has the most dating apps on their phone
-15. would ghost someone after a great date
-16. has a secret crush on someone here
-17. would slide into a celebrity's DMs
-18. would get back with their ex
-19. has a secret Instagram account
-20. would read their partner's texts
-21. would break up over text
-22. has the longest list of exes
-23. would keep a relationship secret
-24. has sent a spicy text to the wrong person
-25. would fall for their best friend
-26. would date two people at once
-27. has the most toxic ex
-28. would flirt their way out of a speeding ticket
-29. has the dirtiest mind
-30. would go on a date with a stranger they met tonight
-31. has had a crush on a teacher
-32. would say "I love you" first
-33. would propose in public
-34. has the most embarrassing hookup story
-35. would date someone ten years older
-36. has been caught sneaking someone in
-37. would have a holiday fling
-38. would get a tattoo of their partner's name
-39. will check their ex's Instagram tonight
-40. is the best kisser (just guessing)
-41. would have a one-night stand
-42. has been on the most dates this year
-43. will send a risky text tonight
-44. would elope without telling anyone
-45. has a type and never changes it
-46. would date a celebrity just to get famous
-47. has the most red flags but still gets the most dates
-48. would wear the boldest outfit on a first date
-49. would marry someone they met on holiday
-50. has a crush they'd never admit to
-
-**Savage 🔥** (50)
-
-1. you like the least
-2. you'd least want to be stuck on an island with
-3. is the most fake
-4. would talk behind your back
-5. needs a reality check
-6. you'd unfollow on Instagram
-7. thinks they're the funniest but isn't
-8. is the most high-maintenance
-9. would leave the group chat first
-10. you'd least trust with a secret
-11. is the cheapest when splitting the bill
-12. is most likely to drunk-call their boss
-13. gives the worst advice
-14. is the biggest show-off
-15. you'd least want as your boss
-16. you'd never introduce to your parents
-17. is the worst texter
-18. ruins every group photo
-19. would sell out the group for money
-20. is the most stubborn
-21. always makes it about themselves
-22. has the worst taste in partners
-23. would be the worst travel buddy
-24. complains the most
-25. you'd mute on the group chat
-26. would steal your fries without asking
-27. never pays back money
-28. would forget you exist if they got famous
-29. has the worst fashion sense
-30. is the worst at keeping plans
-31. always cancels last minute
-32. is the most annoying when drunk
-33. tells the most boring stories
-34. would ditch you for a date
-35. you'd least want next to you on a long flight
-36. thinks they're always right
-37. would post an ugly photo of you
-38. needs the most attention
-39. would be the worst cook
-40. is the biggest gossip
-41. has the most annoying laugh
-42. is the worst gift giver
-43. would make the worst parent
-44. is the laziest
-45. would rat you out to your parents
-46. would read your diary
-47. is the sorest loser
-48. would eat the last slice without asking
-49. you'd ban from the aux cord
-50. would sacrifice everyone else to survive a zombie apocalypse
-
-## Bollywood Star
-
-**1 line description** → A Bollywood music quiz where everyone races to answer song questions, and everyone who isn't first drinks.
-
-**When to play? (Emotional Outcome)** → When you want nostalgia, loud singing and dramatic hook steps. Made for Bollywood lovers, from old classics to the latest hits.
-
-**Number of people required** → 3 or more (1 host + 2 or more players)
-
-**How to Play** →
-
-1. Pick a host. The host picks a Bollywood song, old or new, and asks a question about it.
-2. Questions can be things like: perform the hook step of this song, name the lead actors in this song, or name the town they are travelling to in this song.
-3. Everyone races to answer. The first person to get it right wins the round.
-4. Everyone else drinks.
-5. The winner becomes the host for the next round, or the host keeps going with a new song.
-
-**Rules** →
-
-- Every question must be about a song: its lyrics, dance steps, actors, movie, singers or scenes.
-- The host's call on who answered first is final.
-- If nobody gets it, the host reveals the answer and moves on to the next song.
-- Example: "Perform the hook step of 'Chaiyya Chaiyya'."
+- All four categories are always in play (no category filters yet).
+- The game keeps going until the group stops; there is no set end.
+- No twist for unanimous votes, and no Ick tally yet.
+- GO stays on screen for about 1.5 seconds, then the drink message shows.
 
 
-**Question Types** →
-
-- **Emoji:** Guess the song or movie from the emojis.
-- **Hum It / Act It Out:** The host secretly shows one player a song. They hum it or act it out without words. The first person to guess it wins, and everyone else drinks.
-- **Hook Step:** Everyone performs it at once. The host picks the best one, and everyone else drinks.
-- **Complete the Title:** Finish the movie name.
-- **True or False:** Shout your answer first.
-- **Odd One Out:** Spot the one that doesn't belong.
-- **Name 3:** First person to name three wins.
-- **Guess the Song:** The host describes a famous scene.
-- **Trivia:** Bollywood trivia with a cheeky twist.
-
-**Question Bank (Easy)** →
-
-1. **Emoji:** 🚂💃 → Chaiyya Chaiyya
-2. **Complete the Title:** "Zindagi Na Milegi ___" → Dobara
-3. **Trivia:** Which actor is so tall and so legendary that the whole country just calls him "Big B"? → Amitabh Bachchan
-4. **Hook Step:** "Lungi Dance" → Chennai Express
-5. **True or False:** "Lungi Dance" is a tribute to Rajinikanth. → True
-6. **Guess the Song:** Shah Rukh and Kajol in bright outfits in snowy Iceland. → Gerua
-7. **Name 3:** Songs with "Dil" in the title. → Host judges
-8. **Hum It:** "Kal Ho Naa Ho" → Kal Ho Naa Ho
-9. **Odd One Out:** Gerua, Chaiyya Chaiyya, Tujhe Dekha To, Tum Hi Ho. Which isn't a Shah Rukh Khan song? → Tum Hi Ho
-10. **Emoji:** 🕶️🖤 → Kala Chashma
-11. **Trivia:** Which actor has opened his arms on screen so many times that every guy at a hill station now copies the pose? → Shah Rukh Khan
-12. **Act It Out:** "Sheila Ki Jawani" → Sheila Ki Jawani
-13. **Complete the Title:** "Yeh Jawaani Hai ___" → Deewani
-14. **True or False:** "Kala Chashma" stars Ranbir Kapoor. → False (Sidharth Malhotra)
-15. **Guess the Song:** A family party on a cruise ship. → Gallan Goodiyaan
-16. **Name 3:** Arijit Singh songs. → Host judges
-17. **Trivia:** Who was the real "Nightingale of India"? (No, not your aunty who sings at every wedding.) → Lata Mangeshkar
-18. **Hook Step:** "Jhoome Jo Pathaan" → Pathaan
-19. **Odd One Out:** Badtameez Dil, Ainvayi Ainvayi, Kabira, Ilahi. Which isn't from Yeh Jawaani Hai Deewani? → Ainvayi Ainvayi (Band Baaja Baaraat)
-20. **Emoji:** 🕊️💃 → Masakali
-21. **Trivia:** Which actor do fans call "Bhaijaan", and can somehow never keep his shirt on in a song? → Salman Khan
-22. **Hum It:** "Kabhi Kabhi Aditi" → Kabhi Kabhi Aditi
-23. **Complete the Title:** "Dilwale Dulhania ___" → Le Jayenge
-24. **True or False:** "Jai Ho" won an Oscar. → True
-25. **Guess the Song:** Three friends in Spain dancing with a flamenco dancer. → Señorita
-26. **Name 3:** Shah Rukh Khan songs. → Host judges
-27. **Trivia:** Which movie gave us "Apna Time Aayega", the official anthem of everyone waiting for payday? → Gully Boy
-28. **Act It Out:** "Kabhi Khushi Kabhie Gham" → Kabhi Khushi Kabhie Gham
-29. **Trivia:** Which American singer made the whole country try to say "Chammak Challo" in his accent? → Akon
-30. **Trivia:** Which actress turned "Munni Badnaam Hui" into the song every sangeet aunty requests? → Malaika Arora
-
-**Question Bank (Medium)** →
-
-1. **Emoji:** ☀️📉 → Suraj Hua Maddham
-2. **Trivia:** In Kuch Kuch Hota Hai, what word is written on Rahul's famous chain? → Cool
-3. **Hook Step:** "Ek Do Teen" → Tezaab
-4. **Complete the Title:** "Ajab Prem Ki ___" → Ghazab Kahani
-5. **True or False:** The original "Tip Tip Barsa Paani" starred Akshay Kumar and Raveena Tandon. → True
-6. **Guess the Song:** Preity Zinta dancing through the backwaters of Kerala in Dil Se. → Jiya Jale
-7. **Odd One Out:** Channa Mereya, Bulleya, The Breakup Song, Matargashti. → Matargashti (from Tamasha; the rest are from Ae Dil Hai Mushkil)
-8. **Hum It:** "Tujhe Yaad Na Meri Aayi" → Tujhe Yaad Na Meri Aayi
-9. **Name 3:** Songs with a colour in the title. → Host judges
-10. **Emoji:** 🚗🏖️👬👬 → Dil Chahta Hai
-11. **Trivia:** Who composed "Chaiyya Chaiyya", the reason everyone secretly wants to dance on top of a train (please don't)? → A.R. Rahman
-12. **Act It Out:** "Tattad Tattad" → Tattad Tattad
-13. **True or False:** "Tum Hi Ho" was sung by Atif Aslam. → False (Arijit Singh)
-14. **Guess the Song:** Ranbir Kapoor in a white kurta, singing at a dargah. → Kun Faya Kun
-15. **Complete the Title:** "Kuch Kuch ___" → Hota Hai
-16. **Hook Step:** "Ghungroo" → War
-17. **Odd One Out:** Pinga, Malhari, Deewani Mastani, Nagada Sang Dhol. → Nagada Sang Dhol (from Ram-Leela; the rest are from Bajirao Mastani)
-18. **Trivia:** Which actor debuted in Kaho Naa... Pyaar Hai and made every guy in India sign up for dance class? → Hrithik Roshan
-19. **Name 3:** Songs composed by A.R. Rahman. → Host judges
-20. **Emoji:** 🏃‍♂️🏅 → Bhaag Milkha Bhaag
-21. **Hum It:** "Kabira" → Kabira
-22. **True or False:** "Gerua" was shot in Switzerland. → False (Iceland)
-23. **Guess the Song:** Shah Rukh and Anushka at the Golden Temple. → Tujh Mein Rab Dikhta Hai
-24. **Trivia:** Which movie made the whole country fold up their lungi and dance? (Hint: catch the train.) → Chennai Express
-25. **Act It Out:** "Badtameez Dil" → Badtameez Dil
-26. **Name 3:** Ranveer Singh songs. → Host judges
-27. **Guess the Song:** Hrithik Roshan and Tiger Shroff in a dance-off. → Jai Jai Shivshankar (War)
-28. **Hook Step:** "Dhinka Chika" → Ready
-29. **Trivia:** Which rapper jumps into "Kala Chashma" and makes sure nobody can sit still at the sangeet? → Badshah
-30. **Complete the Title:** "Bunty Aur ___" → Babli
-
-**Question Bank (Hard)** →
-
-1. **Emoji:** ☂️🌧️💑 → Pyar Hua Iqrar Hua
-2. **Complete the Title:** "Dil Apna Aur ___" → Preet Parai
-3. **Trivia:** In Sholay, what's the name of Basanti's horse? → Dhanno
-4. **Hook Step:** "I Am a Disco Dancer" → Disco Dancer
-5. **True or False:** R.D. Burman sang "Mehbooba Mehbooba" himself. → True
-6. **Guess the Song:** Rajesh Khanna in a jeep, singing to Sharmila Tagore on the Darjeeling toy train. → Mere Sapno Ki Rani
-7. **Odd One Out:** Gabbar, Mogambo, Shakaal, Bunty. Which one isn't a famous Bollywood villain? → Bunty
-8. **Hum It:** "Lag Ja Gale" → Lag Ja Gale
-9. **Name 3:** Songs sung by Kishore Kumar. → Host judges
-10. **Emoji:** 🌕 → Chaudhvin Ka Chand
-11. **Trivia:** Who wrote the lyrics of "Jai Ho" and took home an Oscar, making the whole country scream at their TV? → Gulzar
-12. **Act It Out:** "Chalti Ka Naam Gaadi" → Chalti Ka Naam Gaadi
-13. **True or False:** "Chaiyya Chaiyya" was shot on the Darjeeling toy train. → False (the Nilgiri Mountain Railway)
-14. **Guess the Song:** Zeenat Aman among hippies in Kathmandu. → Dum Maro Dum
-15. **Complete the Title:** "Hare Rama ___" → Hare Krishna
-16. **Hook Step:** "Jumma Chumma De De" → Hum
-17. **Odd One Out:** Lag Ja Gale, Ajeeb Dastan Hai Yeh, Pal Pal Dil Ke Paas, Pyar Kiya To Darna Kya. Which isn't sung by Lata Mangeshkar? → Pal Pal Dil Ke Paas (Kishore Kumar)
-18. **Trivia:** In "Ik Junoon", the ZNMD boys get pelted with tomatoes at which Spanish festival? → La Tomatina
-19. **Name 3:** Songs from a Raj Kapoor film. → Host judges
-20. **Emoji:** 🪁 → Kati Patang
-21. **Hum It:** "Chura Liya Hai Tumne" → Chura Liya Hai Tumne
-22. **True or False:** "Ek Ladki Ko Dekha" was composed by R.D. Burman. → True
-23. **Guess the Song:** Madhubala dancing in a palace hall of mirrors. → Pyar Kiya To Darna Kya
-24. **Trivia:** Who sang "Chaiyya Chaiyya", the song every dad still belts out off-key? (Name both.) → Sukhwinder Singh and Sapna Awasthi
-25. **Act It Out:** "Jhumka Gira Re" → Jhumka Gira Re
-26. **Name 3:** Helen dance numbers. → Host judges
-27. **Guess the Song:** Jai and Veeru on a motorcycle with a sidecar. → Yeh Dosti
-28. **Complete the Title:** "Woh Kaun ___" → Thi?
-29. **Trivia:** Which actress played Anarkali in Mughal-e-Azam, the original girlfriend the parents didn't approve of? → Madhubala
-30. **Guess the Song:** Sunil Dutt lip-syncs while Kishore Kumar secretly sings for him. → Mere Saamne Wali Khidki Mein
