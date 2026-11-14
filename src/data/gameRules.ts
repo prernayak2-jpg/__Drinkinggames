@@ -68,3 +68,23 @@ export const spellBGameRules: GameRules = {
     'Non-drinkers can swap any sip for a sip of water.',
   ],
 }
+
+export const hesATenGameRules: GameRules = {
+  title: "He's a 10 but…",
+  tagline: 'One player guesses the number on their forehead from everyone\'s "He\'s a 10 but…" clues.',
+  players: '3 or more (1 guesser + 2 or more clue-givers)',
+  howToPlay: [
+    "Enter everyone's names, choose He, She or They, and pick a level.",
+    'The guesser holds the phone to their forehead with the screen facing the group. A number from 1 to 10 shows on screen.',
+    'The clue-giver named on screen says "He\'s a 10 but…" plus a flaw that should bring him down to that number. Trait cards on screen can help.',
+    'The guesser says a number, and someone taps Right or Wrong.',
+    'Wrong: the clue-giver drinks, and the next player gives a clue.',
+    'After 3 wrong guesses, the number is revealed and the guesser drinks.',
+    'Right: the phone passes to the next guesser. Once everyone has guessed, you see the drink count and the fastest guesser.',
+  ],
+  rules: [
+    "Clue-givers can't say the number or hint at it with fingers.",
+    "The guesser can't look at the screen.",
+    'Example: the number is 2 → "He\'s a 10 but he chews with his mouth open and calls his mum during dates."',
+  ],
+}
