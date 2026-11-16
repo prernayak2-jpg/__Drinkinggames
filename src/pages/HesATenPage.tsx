@@ -167,7 +167,7 @@ export function HesATenPage() {
       <SceneLayout scene={<TableScene />}>
         <Title>{title}</Title>
         <fieldset>
-          <legend className="mb-2 w-full text-center text-violet-200">Who are we roasting?</legend>
+          <legend className="mb-2 w-full text-center text-cream/70">Who are we roasting?</legend>
           <div className="grid grid-cols-3 gap-2">
             {(Object.keys(subjects) as Subject[]).map((s) => (
               <button
@@ -175,8 +175,8 @@ export function HesATenPage() {
                 type="button"
                 aria-pressed={subject === s}
                 onClick={() => setSubject(s)}
-                className={`min-h-12 rounded-2xl border-2 font-sign text-lg transition active:scale-95 ${
-                  subject === s ? 'border-neon-teal bg-neon-teal/20 text-white' : 'border-white/25 bg-black/50 text-zinc-300'
+                className={`min-h-12 rounded-2xl border-2 font-display text-lg transition active:scale-95 ${
+                  subject === s ? 'border-gold bg-gold/20 text-cream' : 'border-cream/30 bg-ink text-cream/60'
                 }`}
               >
                 {subjects[s].label}
@@ -184,11 +184,11 @@ export function HesATenPage() {
             ))}
           </div>
         </fieldset>
-        <p className="-mb-2 text-center text-violet-200">Pick a level to start</p>
+        <p className="-mb-2 text-center text-cream/70">Pick a level to start</p>
         {levelOrder.map((l) => (
           <ChoiceButton key={l} onClick={() => startRound(l)}>
             {levels[l].emoji} {levels[l].label}
-            <span className="block font-sans text-sm text-violet-200">{levelHints[l]}</span>
+            <span className="block font-sans text-sm text-cream/70">{levelHints[l]}</span>
           </ChoiceButton>
         ))}
         <BackLink />
@@ -200,7 +200,7 @@ export function HesATenPage() {
     return (
       <SceneLayout scene={<TableScene />}>
         <Title>Pass the phone to {names[guesser]}</Title>
-        <p className="rounded-2xl bg-black/60 p-4 text-center text-lg backdrop-blur-sm">
+        <p className="rounded-2xl bg-cocoa p-4 text-center text-lg">
           {names[guesser]}, you're guessing. Tap Ready, then hold the phone to your forehead with the screen facing
           the group. No peeking!
         </p>
@@ -221,7 +221,7 @@ export function HesATenPage() {
     return (
       <SceneLayout scene={<TableScene />}>
         <p className="text-center text-xl">Forehead up!</p>
-        <p aria-live="assertive" className="neon-text text-center font-sign text-9xl text-neon-teal">
+        <p aria-live="assertive" className="text-center font-display text-9xl text-gold">
           {countdown}
         </p>
         <div className="h-24" />
@@ -234,9 +234,9 @@ export function HesATenPage() {
     return (
       <SceneLayout scene={<TableScene />}>
         <Title>Nailed it!</Title>
-        <div className="animate-rule-pop rounded-3xl border-2 border-neon-teal bg-black/70 p-5 text-center shadow-[0_0_20px_rgba(45,226,230,0.4)] backdrop-blur-sm">
-          <p className="text-violet-200">{names[guesser]}, you were a</p>
-          <p className="neon-text font-sign text-8xl text-neon-teal">{number}</p>
+        <div className="animate-rule-pop rounded-xl border-2 border-gold bg-cocoa p-5 text-center shadow-lg shadow-black/40">
+          <p className="text-cream/70">{names[guesser]}, you were a</p>
+          <p className="font-display text-8xl text-gold">{number}</p>
           <p className="mt-2 text-lg">
             Guessed in {clues} {clues === 1 ? 'clue' : 'clues'}
           </p>
@@ -259,21 +259,21 @@ export function HesATenPage() {
     return (
       <SceneLayout scene={<TableScene />}>
         <Title>Round over</Title>
-        <div className="min-h-0 overflow-y-auto rounded-3xl bg-black/70 p-5 backdrop-blur-sm">
+        <div className="min-h-0 overflow-y-auto rounded-xl border-2 border-t-8 border-wood bg-cocoa p-5">
           <p className="text-center text-lg">
             {rightCount} of {results.length} guessed their number
           </p>
           {fastest.length > 0 && (
-            <p className="mt-2 text-center text-neon-teal">
+            <p className="mt-2 text-center text-gold">
               ⚡ Fastest guesser: {fastest.join(', ')} ({fewest} {fewest === 1 ? 'clue' : 'clues'})
             </p>
           )}
-          <h2 className="mt-4 text-sm tracking-wide text-violet-200 uppercase">Drinks this round</h2>
+          <h2 className="mt-4 font-bold text-cocoa">Drinks this round</h2>
           <ul className="mt-1 flex flex-col gap-1">
             {names.map((name, seat) => (
               <li key={seat} className="flex justify-between gap-3">
                 <span>{name}</span>
-                <span className="text-neon-pink">🍺 {drinks[seat] ?? 0}</span>
+                <span className="text-mustard">🍺 {drinks[seat] ?? 0}</span>
               </li>
             ))}
           </ul>
@@ -304,7 +304,7 @@ export function HesATenPage() {
   return (
     <SceneLayout scene={<TableScene />}>
       <div className="flex min-h-0 flex-col gap-3 overflow-y-auto">
-        <div className="flex items-center justify-between text-sm text-violet-200">
+        <div className="flex items-center justify-between text-sm text-cream/70">
           <span>
             {levels[level].emoji} Guesser: {names[guesser]}
           </span>
@@ -313,10 +313,10 @@ export function HesATenPage() {
           </span>
         </div>
 
-        <div className="rounded-3xl border-2 border-neon-pink bg-black/70 p-4 text-center shadow-[0_0_24px_rgba(255,61,127,0.5)] backdrop-blur-sm">
-          <p className="text-sm tracking-wide text-violet-200 uppercase">Don't say it out loud!</p>
-          <p className="neon-text font-sign text-9xl leading-none text-neon-pink">{number}</p>
-          <p className="mt-1 text-sm text-violet-200">{bandFor(number).label}</p>
+        <div className="rounded-xl border-2 border-mustard bg-cocoa p-4 text-center shadow-lg shadow-black/40">
+          <p className="font-bold text-cocoa">Don't say it out loud!</p>
+          <p className="font-display text-9xl leading-none text-mustard">{number}</p>
+          <p className="mt-1 text-sm text-cream/70">{bandFor(number).label}</p>
         </div>
 
         <p className="text-center text-lg">
@@ -328,14 +328,14 @@ export function HesATenPage() {
             {hand.map((trait) => (
               <li
                 key={trait}
-                className="animate-rule-pop rounded-2xl border border-neon-teal/60 bg-black/60 px-3 py-2 backdrop-blur-sm"
+                className="animate-rule-pop rounded-2xl border border-gold/60 bg-cocoa px-3 py-2"
               >
                 …{renderTrait(trait, subject)}
               </li>
             ))}
           </ul>
         ) : level === 'medium' ? (
-          <ChoiceButton className="text-base" onClick={() => setStuck(true)}>
+          <ChoiceButton className="text-base!" onClick={() => setStuck(true)}>
             I'm stuck, show me cards
           </ChoiceButton>
         ) : null}
@@ -348,14 +348,14 @@ export function HesATenPage() {
               setSwapped(true)
               deal(number, dealt)
             }}
-            className="text-center text-violet-200 underline underline-offset-4 disabled:no-underline disabled:opacity-40"
+            className="text-center text-lg font-bold text-mustard underline underline-offset-4 disabled:no-underline disabled:opacity-40"
           >
             {swapped ? 'Swap used this turn' : 'Swap cards (once per turn)'}
           </button>
         )}
       </div>
 
-      <p className="-mb-2 text-center text-violet-200">
+      <p className="-mb-2 text-center text-cream/70">
         {names[guesser]} guesses a number. Were they right?
       </p>
       <div className="grid grid-cols-2 gap-3">
@@ -369,17 +369,17 @@ export function HesATenPage() {
         <Popup onOk={closePopup}>
           {popup.kind === 'wrong' ? (
             <>
-              <p className="neon-text font-sign text-3xl text-neon-pink">Wrong!</p>
-              <p className="mt-3 text-xl">
+              <p className="font-display text-5xl text-brick">Wrong!</p>
+              <p className="mt-3 text-xl font-bold">
                 {popup.name}, that clue didn't land. Your penalty is to drink! <span aria-hidden="true">🍺</span>
               </p>
             </>
           ) : (
             <>
-              <p className="neon-text font-sign text-3xl text-neon-pink">Out of clues!</p>
-              <p className="mt-3 text-sm tracking-wide text-violet-200 uppercase">The number was</p>
-              <p className="neon-text font-sign text-7xl text-neon-teal">{number}</p>
-              <p className="mt-3 text-xl">
+              <p className="font-display text-5xl text-brick">Out of clues!</p>
+              <p className="mt-3 font-bold text-cocoa">The number was</p>
+              <p className="font-display text-7xl text-pine">{number}</p>
+              <p className="mt-3 text-xl font-bold">
                 {names[clueGiver]} drinks for the last clue, and {popup.name} drinks for missing it!{' '}
                 <span aria-hidden="true">🍺</span>
               </p>
@@ -392,13 +392,13 @@ export function HesATenPage() {
 }
 
 function Title({ children }: { children: ReactNode }) {
-  return <h1 className="neon-text text-center font-sign text-3xl leading-tight text-neon-pink">{children}</h1>
+  return <h1 className="text-center font-display text-4xl leading-tight text-cream">{children}</h1>
 }
 
 function BackLink() {
   return (
-    <Link to="/games" className="text-center text-violet-200 underline underline-offset-4">
-      Back to games
+    <Link to="/games" className="text-center text-lg font-bold text-mustard underline underline-offset-4">
+      Back to the menu
     </Link>
   )
 }

@@ -104,7 +104,7 @@ export function SpellBPage() {
     return (
       <PlayerNamesScreen
         title="Who's playing?"
-        intro="Add everyone in the order you'll pass the phone around."
+        intro="Sign the register in the order the phone goes around."
         initialNames={names}
         minPlayers={MIN_PLAYERS}
         onDone={(entered) => {
@@ -126,7 +126,7 @@ export function SpellBPage() {
         ))}
         <button
           type="button"
-          className="text-center text-violet-200 underline underline-offset-4"
+          className="text-center text-lg font-bold text-mustard underline underline-offset-4"
           onClick={() => setPhase('names')}
         >
           Back
@@ -141,7 +141,7 @@ export function SpellBPage() {
     return (
       <SceneLayout scene={<TableScene />}>
         <Title>Round over</Title>
-        <div className="min-h-0 overflow-y-auto rounded-3xl bg-black/70 p-5 backdrop-blur-sm">
+        <div className="min-h-0 overflow-y-auto rounded-xl border-2 border-t-8 border-wood bg-cocoa p-5">
           <p className="text-center text-lg">
             {rightCount} of {results.length} words spelled right
           </p>
@@ -151,7 +151,7 @@ export function SpellBPage() {
               return (
                 <li key={seat} className="flex justify-between gap-3">
                   <span>{name}</span>
-                  <span className="text-neon-teal">
+                  <span className="text-gold">
                     {mine.filter((r) => r.correct).length} / {mine.length}
                   </span>
                 </li>
@@ -185,49 +185,58 @@ export function SpellBPage() {
 
   return (
     <SceneLayout scene={<TableScene />}>
-      <div className="flex items-center justify-between text-sm text-violet-200">
-        <span>
-          {levels[level].emoji} {levels[level].label}
-        </span>
-        <span>
+      <div className="flex items-center justify-between font-bold">
+        <span className="rounded-full border-[3px] border-mustard px-4 py-1 text-lg">{levels[level].label}</span>
+        <span className="text-lg">
           Word {Math.min(results.length + (feedback ? 0 : 1), roundLength)} of {roundLength}
         </span>
       </div>
 
       <Title>{names[feedback ? results.at(-1)!.seat : currentSeat]}'s turn</Title>
 
-      <div className="flex min-h-0 flex-col gap-3 overflow-y-auto rounded-3xl bg-black/70 p-5 backdrop-blur-sm">
+      <div className="flex min-h-0 flex-col gap-3 overflow-y-auto rounded-xl border-2 border-t-8 border-wood bg-cocoa p-5">
         {canSpeak ? (
-          <ChoiceButton className="text-lg" onClick={() => say(word.word)}>
-            🔊 Hear it again
-          </ChoiceButton>
+          <button
+            type="button"
+            onClick={() => say(word.word)}
+            className="flex min-h-14 items-center justify-center gap-3 rounded-xl border-2 border-cream bg-cocoa font-display text-2xl text-cream transition hover:bg-wood active:scale-95"
+          >
+            <svg viewBox="0 0 24 24" className="size-7 text-mustard" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M4 9v6h4l5 4V5L8 9H4ZM16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" />
+            </svg>
+            Hear it again
+          </button>
         ) : (
-          <p className="text-center text-sm text-violet-200">
+          <p className="text-center text-sm text-cream/70">
             This browser can't read words out loud. Try Chrome or Safari.
           </p>
         )}
-        <p>
-          <span className="font-semibold text-neon-teal">Meaning:</span> {word.meaning}
+        <p className="text-lg">
+          <span className="font-bold text-gold">Meaning:</span> {word.meaning}
         </p>
-        <p>
-          <span className="font-semibold text-neon-teal">In a sentence:</span> {word.sentence}
+        <p className="text-lg">
+          <span className="font-bold text-gold">In a sentence:</span> {word.sentence}
         </p>
       </div>
 
       {feedback?.correct ? (
-        <div className="animate-rule-pop flex flex-col gap-3 rounded-3xl border-2 border-neon-teal bg-black/70 p-4 text-center shadow-[0_0_20px_rgba(45,226,230,0.4)] backdrop-blur-sm">
-          <p className="neon-text font-sign text-3xl text-neon-teal">✅ Correct!</p>
+        <div className="animate-rule-pop flex flex-col gap-3 rounded-xl border-2 border-gold bg-cocoa p-4 text-center shadow-lg shadow-black/40">
+          <p className="font-display text-4xl text-gold">Nailed it!</p>
           <p className="text-lg">{word.word}</p>
           <ChoiceButton variant="primary" autoFocus onClick={next}>
             Next
           </ChoiceButton>
         </div>
       ) : (
-        <form onSubmit={check} className="flex flex-col gap-3">
+        <form onSubmit={check} className="mt-auto flex flex-col gap-3">
+          <label htmlFor="spelling" className="font-bold">
+            Type the spelling
+          </label>
           <input
+            id="spelling"
             value={typed}
             onChange={(e) => setTyped(e.target.value)}
-            placeholder="Type the spelling"
+            placeholder="Go on, we believe in you"
             aria-label="Your spelling"
             // No autocorrect or suggestions: the phone mustn't fix the spelling for you
             autoComplete="off"
@@ -235,7 +244,7 @@ export function SpellBPage() {
             autoCapitalize="none"
             spellCheck={false}
             maxLength={40}
-            className="min-h-14 rounded-2xl border-2 border-neon-pink/70 bg-black/60 px-4 text-center text-2xl text-white placeholder:text-zinc-500 focus:border-neon-pink focus:outline-none"
+            className="min-h-16 rounded-xl border-[3px] border-ink bg-cream px-4 text-center text-2xl font-bold text-ink ring-[3px] ring-cream placeholder:text-cocoa/60 focus:ring-mustard focus:outline-none"
           />
           <ChoiceButton type="submit" variant="primary" disabled={!typed.trim()}>
             Check
@@ -245,11 +254,14 @@ export function SpellBPage() {
 
       {feedback && !feedback.correct && (
         <Popup onOk={next}>
-          <p className="neon-text font-sign text-3xl text-neon-pink">❌ Wrong!</p>
-          <p className="mt-3 text-sm tracking-wide text-violet-200 uppercase">The right spelling is</p>
-          <p className="mt-1 text-2xl font-semibold text-neon-teal">{word.word}</p>
-          <p className="mt-5 text-sm tracking-wide text-violet-200 uppercase">Your dare</p>
-          <p className="mt-1 text-xl">{feedback.dare}</p>
+          <p className="font-display text-6xl text-brick">Wrong!</p>
+          <p className="mt-2 font-bold text-cocoa">The right spelling is</p>
+          <p className="mt-2 font-display text-5xl tracking-wide text-pine">{word.word}</p>
+          <div className="double-rule mt-4" />
+          <p className="mt-5 text-lg font-bold">Autocorrect can't save you here. Your glass can.</p>
+          <div className="double-rule mt-4" />
+          <p className="mt-5 font-display text-2xl text-brick">Your dare</p>
+          <p className="mt-2 text-2xl font-bold">{feedback.dare}</p>
         </Popup>
       )}
     </SceneLayout>
@@ -257,13 +269,13 @@ export function SpellBPage() {
 }
 
 function Title({ children }: { children: ReactNode }) {
-  return <h1 className="neon-text text-center font-sign text-3xl leading-tight text-neon-pink">{children}</h1>
+  return <h1 className="text-center font-display text-4xl leading-tight text-cream">{children}</h1>
 }
 
 function BackLink() {
   return (
-    <Link to="/games" className="text-center text-violet-200 underline underline-offset-4">
-      Back to games
+    <Link to="/games" className="text-center text-lg font-bold text-mustard underline underline-offset-4">
+      Back to the menu
     </Link>
   )
 }

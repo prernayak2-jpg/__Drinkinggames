@@ -16,7 +16,7 @@ type PlayerNamesScreenProps = {
   onDone: (names: string[]) => void
 }
 
-/** Enter everyone's names before a game, in seating order. */
+/** Enter everyone's names before a game, in seating order — signed into the guest register. */
 export function PlayerNamesScreen({
   title,
   intro,
@@ -35,29 +35,36 @@ export function PlayerNamesScreen({
   }
 
   return (
-    <SceneLayout scene={<TableScene />}>
-      <h1 className="neon-text text-center font-sign text-3xl leading-tight text-neon-pink">{title}</h1>
-      <form onSubmit={submit} className="flex min-h-0 flex-col gap-4">
-        <div className="min-h-0 overflow-y-auto rounded-3xl bg-black/70 p-4 backdrop-blur-sm">
-          <p className="mb-3 text-center text-sm text-violet-200">{intro}</p>
-          <ol className="flex flex-col gap-2">
+    <SceneLayout scene={<TableScene />} fade={false}>
+      <div>
+        <h1 className="font-display text-4xl leading-tight text-cream">{title}</h1>
+        <p className="mt-2 text-lg text-cream/85">{intro}</p>
+      </div>
+      <form onSubmit={submit} className="flex min-h-0 flex-col gap-6">
+        <div className="flex min-h-0 flex-col rounded-xl bg-cream px-5 pt-4 pb-5 text-ink shadow-[0_8px_0_rgba(0,0,0,0.35)]">
+          <div className="flex items-baseline justify-between">
+            <h2 className="font-display text-2xl text-brick">Guest register</h2>
+            <span className="font-bold">Table {names.length}</span>
+          </div>
+          <div className="double-rule mt-2" />
+          <ol className="mt-2 flex min-h-0 flex-col gap-3 overflow-y-auto py-1">
             {names.map((name, i) => (
-              <li key={i} className="flex items-center gap-2">
-                <span className="w-6 text-right text-violet-200">{i + 1}.</span>
+              <li key={i} className="flex items-center gap-3">
+                <span className="w-7 text-lg font-bold">{i + 1}.</span>
                 <input
                   value={name}
                   onChange={(e) => setNames((n) => n.map((old, j) => (j === i ? e.target.value : old)))}
-                  placeholder={i === 0 && firstPlaceholder ? firstPlaceholder : `Player ${i + 1}`}
+                  placeholder={i === 0 && firstPlaceholder ? firstPlaceholder : 'Name'}
                   aria-label={`Player ${i + 1} name`}
                   maxLength={20}
-                  className="min-h-11 flex-1 rounded-xl border border-white/25 bg-black/50 px-3 text-lg text-white placeholder:text-zinc-500 focus:border-neon-teal focus:outline-none"
+                  className="min-h-12 min-w-0 flex-1 border-b-2 border-ink bg-transparent px-1 text-xl font-bold text-ink placeholder:text-cocoa/50 focus:border-brick focus:outline-none"
                 />
                 <button
                   type="button"
                   aria-label={`Remove player ${i + 1}`}
                   disabled={names.length <= minPlayers}
                   onClick={() => setNames((n) => n.filter((_, j) => j !== i))}
-                  className="min-h-11 w-11 rounded-xl border border-white/25 text-xl text-violet-200 disabled:opacity-30"
+                  className="size-11 shrink-0 rounded-lg border-2 border-cocoa text-2xl leading-none text-cocoa disabled:opacity-30"
                 >
                   ×
                 </button>
@@ -68,17 +75,17 @@ export function PlayerNamesScreen({
             type="button"
             disabled={names.length >= MAX_PLAYERS}
             onClick={() => setNames((n) => [...n, ''])}
-            className="mt-3 w-full rounded-xl border border-dashed border-neon-teal/60 py-2 text-neon-teal disabled:opacity-30"
+            className="mt-4 w-full rounded-lg border-2 border-dashed border-cocoa py-3 text-lg font-bold disabled:opacity-30"
           >
-            + Add a player
+            + Pull up a chair
           </button>
         </div>
         <ChoiceButton type="submit" variant="primary" disabled={!ready}>
-          {ready ? 'Next' : 'Fill in every name'}
+          {ready ? 'Seat us' : 'Sign every name'}
         </ChoiceButton>
       </form>
-      <Link to="/games" className="text-center text-violet-200 underline underline-offset-4">
-        Back to games
+      <Link to="/games" className="text-center text-lg font-bold text-mustard underline underline-offset-4">
+        Back
       </Link>
     </SceneLayout>
   )

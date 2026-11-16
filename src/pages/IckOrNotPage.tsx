@@ -64,19 +64,19 @@ export function IckOrNotPage() {
 
   return (
     <SceneLayout scene={<TableScene />}>
-      <h1 className="neon-text text-center font-sign text-3xl leading-tight text-neon-pink">Ick or Not?</h1>
+      <h1 className="text-center font-display text-4xl leading-tight text-cream">Ick or Not?</h1>
 
       <div
-        className={`rounded-3xl border-2 bg-black/70 p-5 text-center backdrop-blur-sm transition ${
+        className={`rounded-xl border-2 bg-cocoa p-5 text-center transition ${
           phase === 'trait'
-            ? 'border-neon-pink shadow-[0_0_24px_rgba(255,61,127,0.5)]'
-            : 'border-white/20 opacity-70'
+            ? 'border-mustard shadow-lg shadow-black/40'
+            : 'border-cream/25 opacity-70'
         }`}
       >
-        <span className="inline-block rounded-full bg-neon-teal/15 px-3 py-1 text-sm font-semibold text-neon-teal">
+        <span className="inline-block rounded-full bg-gold/15 px-3 py-1 text-sm font-semibold text-gold">
           {category.emoji} {category.label}
         </span>
-        <p className="mt-4 text-sm tracking-wide text-violet-200 uppercase">Someone who…</p>
+        <p className="mt-4 text-sm tracking-wide text-cream/70 uppercase">Someone who…</p>
         <p key={trait.text} className="animate-rule-pop mt-2 text-2xl leading-snug font-semibold">
           {trait.text}
         </p>
@@ -95,14 +95,14 @@ export function IckOrNotPage() {
       )}
 
       {phase === 'countdown' && (
-        <p aria-live="assertive" className="neon-text text-center font-sign text-8xl text-neon-teal">
+        <p aria-live="assertive" className="text-center font-display text-8xl text-gold">
           {countdown}
         </p>
       )}
 
       {phase === 'go' && (
         <div aria-live="assertive" className="animate-rule-pop text-center">
-          <p className="neon-text font-sign text-8xl text-neon-pink">GO!</p>
+          <p className="font-display text-8xl text-mustard">GO!</p>
           <p className="mt-2 text-xl">
             <span aria-hidden="true">👍</span> Not or <span aria-hidden="true">👎</span> Ick
           </p>
@@ -111,7 +111,7 @@ export function IckOrNotPage() {
 
       {phase === 'drink' && (
         <>
-          <div className="animate-rule-pop rounded-3xl border-2 border-neon-teal bg-black/70 p-5 text-center shadow-[0_0_20px_rgba(45,226,230,0.4)] backdrop-blur-sm">
+          <div className="animate-rule-pop rounded-xl border-2 border-gold bg-cocoa p-5 text-center shadow-lg shadow-black/40">
             <p className="text-5xl" aria-hidden="true">
               👎🍺
             </p>
@@ -123,8 +123,8 @@ export function IckOrNotPage() {
         </>
       )}
 
-      <Link to="/games" className="text-center text-violet-200 underline underline-offset-4">
-        Back to games
+      <Link to="/games" className="text-center text-lg font-bold text-mustard underline underline-offset-4">
+        Back to the menu
       </Link>
     </SceneLayout>
   )

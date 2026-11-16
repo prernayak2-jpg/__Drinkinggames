@@ -16,23 +16,24 @@ export function EntrancePage() {
   }
 
   return (
-    <SceneLayout scene={<EntranceScene />}>
-      <h1 className="neon-text text-center font-sign text-4xl leading-tight text-neon-pink">
-        Show your ID to enter
-      </h1>
+    <SceneLayout scene={<EntranceScene />} split>
+      <div>
+        <h1 className="font-display text-5xl leading-tight lg:text-6xl text-cream">ID, please.</h1>
+        <p className="mt-2 text-lg text-cream/85">House rule: only grown-ups get past this door.</p>
+      </div>
 
-      <label className="flex cursor-pointer items-center gap-3 rounded-2xl bg-black/60 p-4 text-lg backdrop-blur-sm">
+      <label className="flex cursor-pointer items-center gap-4 rounded-2xl border-2 border-cream/80 bg-ink p-4 text-xl font-bold">
         <input
           type="checkbox"
           checked={isOver18}
           onChange={(e) => setIsOver18(e.target.checked)}
-          className="size-6 shrink-0 cursor-pointer accent-neon-pink"
+          className="size-7 shrink-0 cursor-pointer accent-mustard"
         />
-        I am over 18 years of age
+        I am over 18
       </label>
 
       <ChoiceButton variant="primary" disabled={!isOver18} onClick={enter}>
-        Enter
+        Let me in
       </ChoiceButton>
     </SceneLayout>
   )

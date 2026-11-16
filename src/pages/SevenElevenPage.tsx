@@ -82,25 +82,25 @@ export function SevenElevenPage() {
 
   return (
     <SceneLayout scene={<TableScene />}>
-      <h1 className="neon-text text-center font-sign text-3xl leading-tight text-neon-pink">
+      <h1 className="text-center font-display text-4xl leading-tight text-cream">
         7-11 Rule Shuffle
       </h1>
 
       <div
         aria-live="polite"
         aria-busy={shuffling}
-        className={`min-h-52 rounded-3xl border-2 bg-black/70 p-5 text-center backdrop-blur-sm transition ${
+        className={`min-h-52 rounded-xl border-2 bg-cocoa p-5 text-center transition ${
           shuffling
-            ? 'animate-rule-shake border-neon-teal/70 shadow-[0_0_14px_rgba(45,226,230,0.35)]'
-            : 'border-neon-pink shadow-[0_0_24px_rgba(255,61,127,0.5)]'
+            ? 'animate-rule-shake border-gold/70 shadow-lg shadow-black/40'
+            : 'border-mustard shadow-lg shadow-black/40'
         }`}
       >
         {rule && category ? (
           <div key={shuffling ? 'shuffling' : shown} className={shuffling ? '' : 'animate-rule-pop'}>
-            <span className="inline-block rounded-full bg-neon-teal/15 px-3 py-1 text-sm font-semibold text-neon-teal">
+            <span className="inline-block rounded-full bg-gold/15 px-3 py-1 text-sm font-semibold text-gold">
               {category.emoji} {category.label}
             </span>
-            <p className="mt-4 text-sm tracking-wide text-violet-200 uppercase">
+            <p className="mt-4 text-sm tracking-wide text-cream/70 uppercase">
               Instead of saying the number…
             </p>
             <p className={`mt-2 text-2xl leading-snug font-semibold ${shuffling ? 'opacity-60 blur-[1px]' : ''}`}>
@@ -113,7 +113,7 @@ export function SevenElevenPage() {
               🎲
             </span>
             <p className="text-lg">Said 21 and stuck for a new rule?</p>
-            <p className="text-sm text-violet-200">Tap shuffle to draw one.</p>
+            <p className="text-sm text-cream/70">Tap shuffle to draw one.</p>
           </div>
         )}
       </div>
@@ -131,8 +131,8 @@ export function SevenElevenPage() {
                 onClick={() => toggleCategory(c)}
                 className={`min-h-10 rounded-full border px-3 text-sm transition active:scale-95 ${
                   on
-                    ? 'border-neon-teal bg-neon-teal/20 text-white'
-                    : 'border-white/25 bg-black/50 text-zinc-400 line-through'
+                    ? 'border-gold bg-gold/20 text-cream'
+                    : 'border-cream/30 bg-ink text-cream/50 line-through'
                 }`}
               >
                 {ruleCategories[c].emoji} {ruleCategories[c].label}
@@ -145,14 +145,14 @@ export function SevenElevenPage() {
       <ChoiceButton variant="primary" disabled={shuffling} onClick={shuffle}>
         {shuffling ? 'Shuffling…' : rule ? 'Shuffle again' : 'Shuffle'}
       </ChoiceButton>
-      <p className="-mt-2 text-center text-sm text-violet-200">
+      <p className="-mt-2 text-center text-sm text-cream/70">
         {fresh.length > 0
           ? `${fresh.length} of ${pool.length} rules left in the deck`
           : 'Every rule drawn — next shuffle reshuffles the deck'}
       </p>
 
-      <Link to="/games" className="text-center text-violet-200 underline underline-offset-4">
-        Back to games
+      <Link to="/games" className="text-center text-lg font-bold text-mustard underline underline-offset-4">
+        Back to the menu
       </Link>
     </SceneLayout>
   )

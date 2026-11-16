@@ -5,17 +5,19 @@ type ChoiceButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 }
 
 const variants = {
+  // A wooden tile, like the "Who are you here with?" cards
   choice:
-    'border-2 border-neon-teal/70 bg-black/60 text-white shadow-[0_0_14px_rgba(45,226,230,0.35)] backdrop-blur-sm hover:bg-neon-teal/20',
+    'rounded-xl border-t-[6px] border-mustard bg-wood font-display text-xl text-cream shadow-md shadow-black/40 hover:brightness-110',
+  // The mustard sign-style button: outer mustard frame, thin dark inner line
   primary:
-    'bg-neon-pink text-ink shadow-[0_0_20px_rgba(255,61,127,0.6)] hover:brightness-110 disabled:bg-zinc-600 disabled:text-zinc-300 disabled:shadow-none',
+    'rounded-xl border-[3px] border-ink bg-mustard font-display text-2xl tracking-[0.12em] text-ink uppercase ring-[3px] ring-mustard hover:brightness-105 disabled:bg-[#6b5a3c] disabled:text-ink/70 disabled:ring-[#6b5a3c]',
 }
 
 export function ChoiceButton({ variant = 'choice', className = '', ...props }: ChoiceButtonProps) {
   return (
     <button
       type="button"
-      className={`min-h-14 rounded-2xl px-4 py-3 font-sign text-xl transition active:scale-95 disabled:cursor-not-allowed disabled:active:scale-100 ${variants[variant]} ${className}`}
+      className={`min-h-14 px-4 py-3 transition active:scale-95 disabled:cursor-not-allowed disabled:active:scale-100 ${variants[variant]} ${className}`}
       {...props}
     />
   )

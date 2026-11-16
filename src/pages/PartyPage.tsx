@@ -106,16 +106,16 @@ export function PartyPage() {
           <p className="text-5xl" aria-hidden="true">
             🙅
           </p>
-          <p className="neon-text mt-3 font-sign text-3xl text-neon-pink">Nope!</p>
-          <p className="mt-3 text-xl">
+          <p className="mt-3 font-display text-5xl text-brick">Nope!</p>
+          <p className="mt-3 text-xl font-bold">
             {popup.name}, your penalty is to drink! <span aria-hidden="true">🍺</span>
           </p>
         </>
       ) : (
         <>
-          <p className="text-sm tracking-wide text-violet-200 uppercase">The secret rule was</p>
-          <p className="neon-text mt-2 font-sign text-2xl leading-snug text-neon-teal">{rule?.rule}</p>
-          <p className="mt-5 text-xl">
+          <p className="font-bold text-cocoa">The secret rule was</p>
+          <p className="mt-2 font-display text-2xl leading-snug text-pine">{rule?.rule}</p>
+          <p className="mt-5 text-xl font-bold">
             {popup.drinkers.length > 0 ? (
               <>
                 {popup.drinkers.join(', ')} didn't crack it. Drink up! <span aria-hidden="true">🍺</span>
@@ -160,7 +160,7 @@ export function PartyPage() {
         ))}
         <button
           type="button"
-          className="text-center text-violet-200 underline underline-offset-4"
+          className="text-center text-lg font-bold text-mustard underline underline-offset-4"
           onClick={() => setPhase('setup')}
         >
           Back
@@ -190,7 +190,7 @@ export function PartyPage() {
           </>
         ) : (
           <>
-            <p className="rounded-2xl bg-black/60 p-4 text-center text-lg backdrop-blur-sm">
+            <p className="rounded-2xl bg-cocoa p-4 text-center text-lg">
               {names[host]}, you're the host. Only you get to see the secret rule, so keep the screen to
               yourself.
             </p>
@@ -209,10 +209,10 @@ export function PartyPage() {
     return (
       <SceneLayout scene={<TableScene />}>
         <Title>Round over</Title>
-        <div className="rounded-3xl bg-black/70 p-5 text-center backdrop-blur-sm">
-          <p className="text-sm tracking-wide text-violet-200 uppercase">The secret rule was</p>
+        <div className="rounded-xl border-2 border-t-8 border-wood bg-cocoa p-5 text-center">
+          <p className="text-sm tracking-wide text-cream/70 uppercase">The secret rule was</p>
           <p className="mt-2 text-xl font-semibold">{rule.rule}</p>
-          <p className="mt-4 text-violet-200">
+          <p className="mt-4 text-cream/70">
             {cracked.length} of {guessers.length} players cracked it. {names[(host + 1) % names.length]} is
             the next host.
           </p>
@@ -246,7 +246,7 @@ export function PartyPage() {
   return (
     <SceneLayout scene={<TableScene />}>
       <div className="flex min-h-0 flex-col gap-3 overflow-y-auto">
-        <div className="flex items-center justify-between text-sm text-violet-200">
+        <div className="flex items-center justify-between text-sm text-cream/70">
           <span>
             {levels[level].emoji} {levels[level].label} · Host: {names[host]}
           </span>
@@ -260,7 +260,7 @@ export function PartyPage() {
             type="button"
             aria-expanded={hostCardOpen}
             onClick={() => setHostCardOpen((o) => !o)}
-            className="w-full rounded-2xl border border-white/25 bg-black/60 py-2 text-violet-200 backdrop-blur-sm"
+            className="w-full rounded-2xl border border-cream/30 bg-cocoa py-2 text-cream/70"
           >
             {hostCardOpen ? '🙈 Hide host card' : '👀 Host only: show the rule'}
           </button>
@@ -280,8 +280,8 @@ export function PartyPage() {
         </section>
 
         {hintsShown > 0 && (
-          <section aria-label="Hints" className="rounded-2xl bg-black/60 p-3 backdrop-blur-sm">
-            <h2 className="text-sm tracking-wide text-violet-200 uppercase">Hints</h2>
+          <section aria-label="Hints" className="rounded-2xl bg-cocoa p-3">
+            <h2 className="text-sm tracking-wide text-cream/70 uppercase">Hints</h2>
             <ol className="mt-1 list-decimal pl-5">
               {rule.hints.slice(0, hintsShown).map((hint) => (
                 <li key={hint}>{hint}</li>
@@ -290,8 +290,8 @@ export function PartyPage() {
           </section>
         )}
 
-        <section aria-label="Who cracked it" className="rounded-2xl bg-black/60 p-3 backdrop-blur-sm">
-          <h2 className="text-sm text-violet-200">
+        <section aria-label="Who cracked it" className="rounded-2xl bg-cocoa p-3">
+          <h2 className="text-sm text-cream/70">
             Cracked it? Host taps their name ({cracked.length} of {guessers.length})
           </h2>
           <div className="mt-2 flex flex-wrap gap-2">
@@ -304,7 +304,7 @@ export function PartyPage() {
                   aria-pressed={on}
                   onClick={() => toggleCracked(seat)}
                   className={`min-h-10 rounded-full border px-3 text-sm transition active:scale-95 ${
-                    on ? 'border-neon-teal bg-neon-teal/20 text-white' : 'border-white/25 bg-black/50 text-zinc-300'
+                    on ? 'border-gold bg-gold/20 text-cream' : 'border-cream/30 bg-ink text-cream/60'
                   }`}
                 >
                   {on ? '🧠 ' : ''}
@@ -317,11 +317,11 @@ export function PartyPage() {
       </div>
 
       {outOfTurns ? (
-        <p className="rounded-2xl bg-black/70 p-3 text-center text-lg">Out of turns. Time to reveal the rule!</p>
+        <p className="rounded-2xl bg-cocoa p-3 text-center text-lg">Out of turns. Time to reveal the rule!</p>
       ) : (
         <form
           onSubmit={(e) => e.preventDefault()}
-          className="flex flex-col gap-3 rounded-3xl border-2 border-neon-pink bg-black/70 p-4 shadow-[0_0_24px_rgba(255,61,127,0.5)] backdrop-blur-sm"
+          className="flex flex-col gap-3 rounded-xl border-2 border-mustard bg-cocoa p-4 shadow-lg shadow-black/40"
         >
           <label htmlFor="party-item" className="text-center text-lg">
             <span className="font-semibold">{names[currentSeat]}</span>, what are you bringing to the party?
@@ -333,13 +333,13 @@ export function PartyPage() {
             placeholder="Host types the item"
             maxLength={40}
             autoComplete="off"
-            className="min-h-11 rounded-xl border border-white/25 bg-black/50 px-3 text-center text-lg text-white placeholder:text-zinc-500 focus:border-neon-teal focus:outline-none"
+            className="min-h-11 rounded-xl border border-cream/30 bg-ink px-3 text-center text-lg text-cream placeholder:text-cream/40 focus:border-gold focus:outline-none"
           />
           <div className="grid grid-cols-2 gap-3">
-            <ChoiceButton variant="primary" disabled={!item.trim()} onClick={() => judge(true)}>
+            <ChoiceButton variant="primary" className="text-lg! tracking-wide!" disabled={!item.trim()} onClick={() => judge(true)}>
               Yes, bring it
             </ChoiceButton>
-            <ChoiceButton disabled={!item.trim()} className="disabled:opacity-40" onClick={() => judge(false)}>
+            <ChoiceButton disabled={!item.trim()} className="text-lg! disabled:opacity-40" onClick={() => judge(false)}>
               No
             </ChoiceButton>
           </div>
@@ -348,13 +348,13 @@ export function PartyPage() {
 
       <div className="grid grid-cols-2 gap-3">
         <ChoiceButton
-          className="text-base disabled:opacity-40"
+          className="text-base! disabled:opacity-40"
           disabled={hintsShown >= rule.hints.length}
           onClick={() => setHintsShown((h) => h + 1)}
         >
           {hintsShown >= rule.hints.length ? 'No hints left' : 'Hint (host sips 🍺)'}
         </ChoiceButton>
-        <ChoiceButton variant={outOfTurns || mostCracked ? 'primary' : 'choice'} className="text-base" onClick={reveal}>
+        <ChoiceButton variant={outOfTurns || mostCracked ? 'primary' : 'choice'} className="text-base!" onClick={reveal}>
           Reveal
         </ChoiceButton>
       </div>
@@ -383,13 +383,13 @@ function helperLine(rule: PartyRule, names: string[], seat: number, previousItem
 
 function HostCard({ rule, helper }: { rule: PartyRule; helper?: string }) {
   return (
-    <div className="animate-rule-pop rounded-3xl border-2 border-neon-teal bg-black/80 p-4 shadow-[0_0_20px_rgba(45,226,230,0.4)] backdrop-blur-sm">
-      <p className="text-sm tracking-wide text-violet-200 uppercase">Secret rule</p>
+    <div className="animate-rule-pop rounded-xl border-2 border-gold bg-cocoa p-4 shadow-lg shadow-black/40">
+      <p className="text-sm tracking-wide text-cream/70 uppercase">Secret rule</p>
       <p className="mt-1 text-xl font-semibold">{rule.rule}</p>
       <p className="mt-3">
-        <span className="font-semibold text-neon-teal">How to judge:</span> {rule.judge}
+        <span className="font-semibold text-gold">How to judge:</span> {rule.judge}
       </p>
-      {helper && <p className="mt-1 text-neon-teal">{helper}</p>}
+      {helper && <p className="mt-1 text-gold">{helper}</p>}
       <div className="mt-3 grid grid-cols-2 gap-2 text-sm">
         <div>
           <p className="font-semibold">✅ Yes</p>
@@ -431,19 +431,19 @@ function ClueList({
 }) {
   return (
     <div
-      className={`rounded-2xl border bg-black/60 p-3 backdrop-blur-sm ${
-        tone === 'teal' ? 'border-neon-teal/60' : 'border-neon-pink/60'
+      className={`rounded-2xl border bg-cocoa p-3 ${
+        tone === 'teal' ? 'border-gold/60' : 'border-mustard/60'
       }`}
     >
       <h2 className="font-semibold">{title}</h2>
       {turns.length === 0 ? (
-        <p className="mt-1 text-sm text-zinc-400">Nothing yet</p>
+        <p className="mt-1 text-sm text-cream/50">Nothing yet</p>
       ) : (
         <ul className="mt-1 flex flex-col gap-1">
           {turns.map((t, i) => (
             <li key={i} className="leading-tight">
               {t.item}
-              <span className="block text-xs text-violet-200">{names[t.seat]}</span>
+              <span className="block text-xs text-cream/70">{names[t.seat]}</span>
             </li>
           ))}
         </ul>
@@ -453,13 +453,13 @@ function ClueList({
 }
 
 function Title({ children }: { children: ReactNode }) {
-  return <h1 className="neon-text text-center font-sign text-3xl leading-tight text-neon-pink">{children}</h1>
+  return <h1 className="text-center font-display text-4xl leading-tight text-cream">{children}</h1>
 }
 
 function BackLink() {
   return (
-    <Link to="/games" className="text-center text-violet-200 underline underline-offset-4">
-      Back to games
+    <Link to="/games" className="text-center text-lg font-bold text-mustard underline underline-offset-4">
+      Back to the menu
     </Link>
   )
 }
